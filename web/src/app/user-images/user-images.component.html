@@ -1,0 +1,39 @@
+
+
+
+
+
+
+  <div class="card-header">
+    <h1 class="font-weight-bold" style="color: mintcream;" >Create Announcement</h1>
+  </div>
+
+
+
+
+
+  <hr />
+  <form [formGroup]="form" (submit)="onSubmit()">
+    <div>
+      <input formControlName="name" type="text" placeholder="Enter name..." />
+      <br>
+      <br>
+    </div>
+    <div>
+      <textarea formControlName="email" rows="4" cols="50" type="text" placeholder="Enter description..."></textarea>
+      <br>
+      <br>
+      <br>
+    </div>
+    <div>
+      <input (change)="onFileSelect($event)" type="file" />
+      <br>
+      <br>
+    </div>
+
+    <div>
+      <button type="submit" class="btn btn-primary">Create Accoument</button>
+      <br>
+      <br>
+    </div>
+  </form>

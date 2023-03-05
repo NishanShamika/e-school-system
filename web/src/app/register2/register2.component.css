@@ -1,0 +1,80 @@
+
+
+  body {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  }
+
+  html { 
+   
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+#intro-example {
+    height: 400px;
+    width: 1200px;
+  }
+
+  /* Height for devices larger than 992px */
+  @media (min-width: 992px) {
+    #intro-example {
+    
+      height: 600px;
+      background-attachment: fixed;
+      margin-top: -80px;
+    }
+  }
+  .mask {
+     
+    height: 500px;
+    width: 650px;
+    margin-left: 60px;
+    
+}
+
+  #inputs{
+
+	background-color: transparent;
+    border: 5px;
+    box-shadow: 2ch;
+
+	
+	}
+
+    #inputSelect{
+        background: #ffffff;
+    }
+
+    h1 {
+        color:aliceblue;
+        font-size: 40px;
+        font-family:Arial, Helvetica, sans-serif;
+    }
+
+    select {
+        min-width: 10em;
+        padding: 0.5em 1em;
+        background: transparent;
+        border: #444 solid;
+        border-radius: 1em;
+        color: inherit;
+        font: inherit;
+      }
+      option {
+        background:transparent;
+      }
+      select.solid {
+        background: #222;
+      }
+
+      span {
+        size: 10px;
+        font-size: 10px;
+      }
+      
+  

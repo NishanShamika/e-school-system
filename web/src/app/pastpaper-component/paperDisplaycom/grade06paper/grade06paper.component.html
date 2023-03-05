@@ -1,0 +1,93 @@
+
+
+<div class="card mb-3">
+    <img class="card-img-top" src="./assets/grade06.jpg"  style="height: 250px;"      alt="Card image cap">
+    <div class="card-body">
+      <html>
+        <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        </head>
+
+
+        <form class="form-inline md-form form-sm mt-0" #form="ngForm">
+
+          <div class="card" style="width: 18rem; height: 15rem;">
+            <div class="card-body">
+              <h3 class="card-title" style="text-align: center;">papers</h3>
+              <select  style="margin-left: 55px;" id="myid" [(ngModel)]="name1" class="form-control" #name="ngModel" name="name1">
+                <option value="Maths" >Maths </option>
+                <option value="English" >English </option>
+                <option value="Sinhala" >Sinhala </option>
+                <option value="History" >History </option>
+                <option value="IT" >IT </option>
+                <option value="Science" >Science </option>
+                <option value="Budhidhism" >Budhidhism </option>
+
+                </select>
+                <br>
+                <br>
+
+              <button style="margin-left: 85px;" [(ngModel)]="name1" #name="ngModel" name="name1"
+              value="Maths"
+               value="English"
+                value="Sinhala"
+                value="History"
+                value="IT"
+                value="Science"
+                value="Budhidhism" type="button" class="btn btn-success" (click)="searchPaper()" ngDefaultControl>
+                <span class="glyphicon glyphicon-search"></span> Search
+              </button>
+
+            </div>
+          </div>
+
+
+
+
+
+
+        </form>
+
+      
+
+
+
+
+
+
+
+<br>
+<br>
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+<div class="row mt-5">
+  <div class="col-md-4 mb-3" *ngFor="let paper of Papers">
+    <div class="card" style="width: 25rem; height: 12rem">
+      <div class="card-body">
+        <h3 class="card-title">
+          <h3 style="color: rgb(37, 35, 35)">{{ paper.name }}</h3>
+        </h3>
+        <h4 style="color: rgb(37, 35, 35)">{{ paper.subjectname }}</h4>
+        <i class="fa fa-file-pdf-o" style="font-size:48px;color:red"></i>
+
+        <a [href]="paper.paperPath" download="file.txt"
+          >Click for paper</a
+        >
+        <button
+        type="button" *ngIf="!_authservice.loggedIn()"
+        (click)="deleteGrade06(paper._id)"
+        class="btn btn-danger"
+      >
+        Delete <i class="fa fa-trash-o"></i>
+      </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

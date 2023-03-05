@@ -1,0 +1,205 @@
+
+<div class="background">
+  <head>
+    <title>Font Awesome Icons</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <H1 class="page-Title-Wrapper"><b>Grade {{grade}} MCQ</b></H1>
+<br>
+
+<br>
+
+<div class="question-wrapper">
+  <div class="row">
+    <div class="col-sm-6">
+
+    <div class="card">
+
+      <div class="card mb-3" style="max-width: 740px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img class="card-img-top"  src="./assets/en.jpg" alt="Card image cap" style="height: 250px;width: 250px;">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h1 class="card-header"><b>ENGLISH</b></h1>
+              <p class="card-text"><p>You Have 5 minutes for complete to this Quiz <br>There are 10 questions. </p>
+              <table>
+                  <tr>
+                      <td><a [routerLink]="['/mcq-quiz/'+grade+'/English']" class="btn btn-primary" *ngIf="!isLoggedTeacher()">START QUIZ <i  style="font-size:30px;color:red"></i></a></td>
+                      <td><a [routerLink]="['/mcq-add/'+ grade+ '/English']" class="btn btn-primary" *ngIf="isLoggedTeacher()" >ADD MCQ <i  style="font-size:30px;color:red"></i></a></td>
+                      <td><a [routerLink]="['/mcq-delete/'+ grade+ '/English']" class="btn btn-primary" *ngIf="isLoggedTeacher()">DELETE MCQ <i  style="font-size:30px;color:red"></i></a></td>
+                  </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  </div>
+
+  <br>
+
+  <div class="row">
+    <div class="col-sm-6">
+    <div class="card">
+      <div class="card mb-3" style="max-width: 740px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img class="card-img-top"  src="./assets/ma.jpg" alt="Card image cap" style="height: 250px;width: 250px;">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h1 class="card-header"><b>MATHEMATICS</b></h1>
+              <p class="card-text"><p>You Have 5 minutes for complete to this Quiz <br>There are 10 questions. </p>
+              <table>
+                  <tr>
+                      <td><a [routerLink]="['/mcq-quiz/'+grade+'/Mathematics']" class="btn btn-primary" *ngIf="!isLoggedTeacher()">START QUIZ <i  style="font-size:30px;color:red"></i></a></td>
+                      <td><a [routerLink]="['/mcq-add/'+ grade+ '/Mathematics']" class="btn btn-primary" *ngIf="isLoggedTeacher()">ADD MCQ <i  style="font-size:30px;color:red"></i></a></td>
+                      <td><a [routerLink]="['/mcq-delete/'+ grade+ '/Mathematics']" class="btn btn-primary" *ngIf="isLoggedTeacher()">DELETE MCQ <i  style="font-size:30px;color:red"></i></a></td>
+                  </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+    </div>
+
+  </div>
+
+  <br>
+
+  <div class="row">
+    <div class="col-sm-6">
+    <div class="card">
+      <div class="card mb-3" style="max-width: 740px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img class="card-img-top"  src="./assets/sc.jpg" alt="Card image cap" style="height: 250px;width: 250px;">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h1 class="card-header"><b>SCIENCE</b></h1>
+              <p class="card-text"><p>You Have 5 minutes for complete to this Quiz <br>There are 10 questions. </p>
+              <table>
+                  <tr>
+                      <td><a [routerLink]="['/mcq-quiz/'+grade+'/Science']" class="btn btn-primary" *ngIf="!isLoggedTeacher()">START QUIZ <i  style="font-size:30px;color:red"></i></a></td>
+                      <td><a [routerLink]="['/mcq-add/'+ grade+ '/Science']" class="btn btn-primary" *ngIf="isLoggedTeacher()">ADD MCQ <i  style="font-size:30px;color:red"></i></a></td>
+                      <td><a [routerLink]="['/mcq-delete/'+ grade+ '/Science']" class="btn btn-primary" *ngIf="isLoggedTeacher()">DELETE MCQ <i  style="font-size:30px;color:red"></i></a></td>
+                  </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    </div>
+
+
+    </div>
+
+  </div>
+
+  <br>
+
+  <div class="row">
+    <div class="col-sm-6">
+    <div class="card">
+      <div class="card mb-3" style="max-width: 740px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img class="card-img-top"  src="./assets/si.jpg" alt="Card image cap" style="height: 250px;width: 250px;">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h1 class="card-header"><b>SINHALA</b></h1>
+              <p class="card-text"><p>You Have 5 minutes for complete to this Quiz <br>There are 10 questions. </p>
+
+              <table>
+                  <tr>
+                      <td><a [routerLink]="['/mcq-quiz/'+grade+'/Sinhala']" class="btn btn-primary" *ngIf="!isLoggedTeacher()">START QUIZ <i  style="font-size:30px;color:red"></i></a></td>
+                      <td><a [routerLink]="['/mcq-add/'+ grade+ '/Sinhala']" class="btn btn-primary" *ngIf="isLoggedTeacher()">ADD MCQ <i  style="font-size:30px;color:red"></i></a></td>
+                      <td><a [routerLink]="['/mcq-delete/'+ grade+ '/Sinhala']" class="btn btn-primary" *ngIf="isLoggedTeacher()">DELETE MCQ <i  style="font-size:30px;color:red"></i></a></td>
+                  </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  </div>
+
+  <br>
+
+  <div class="row">
+    <div class="col-sm-6">
+    <div class="card">
+      <div class="card mb-3" style="max-width: 740px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img class="card-img-top"  src="./assets/hi.png" alt="Card image cap" style="height: 250px;width: 250px;">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h1 class="card-header"><b>HISTORY</b></h1>
+              <p class="card-text"><p>You Have 5 minutes for complete to this Quiz <br>There are 10 questions. </p>
+              <table>
+                  <tr>
+                      <td><a [routerLink]="['/mcq-quiz/'+grade+'/History']" class="btn btn-primary" *ngIf="!isLoggedTeacher()">START QUIZ <i  style="font-size:30px;color:red"></i></a></td>
+                      <td><a [routerLink]="['/mcq-add/'+ grade+ '/History']" class="btn btn-primary" *ngIf="isLoggedTeacher()">ADD MCQ <i  style="font-size:30px;color:red"></i></a></td>
+                      <td><a [routerLink]="['/mcq-delete/'+ grade+ '/History']" class="btn btn-primary" *ngIf="isLoggedTeacher()">DELETE MCQ <i  style="font-size:30px;color:red"></i></a></td>
+                  </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="row">
+    <div class="col-sm-6">
+    <div class="card">
+      <div class="card mb-3" style="max-width: 740px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img class="card-img-top"  src="./assets/bu.jpeg" alt="Card image cap" style="height: 250px;width: 250px;">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h1 class="card-header"><b>BUDDHISM</b></h1>
+              <p class="card-text"><p>You Have 5 minutes for complete to this Quiz <br>There are 10 questions. </p>
+              <table>
+                  <tr>
+                      <td><a [routerLink]="['/mcq-quiz/'+grade+'/Buddhism']" class="btn btn-primary" *ngIf="!isLoggedTeacher()">START QUIZ <i  style="font-size:30px;color:red"></i></a></td>
+                      <td><a [routerLink]="['/mcq-add/'+ grade+ '/Buddhism']" class="btn btn-primary" *ngIf="isLoggedTeacher()">ADD MCQ <i  style="font-size:30px;color:red"></i></a></td>
+                      <td><a [routerLink]="['/mcq-delete/'+ grade+ '/Buddhism']" class="btn btn-primary" *ngIf="isLoggedTeacher()">DELETE MCQ <i  style="font-size:30px;color:red"></i></a></td>
+                  </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  </div>
+
+</div>

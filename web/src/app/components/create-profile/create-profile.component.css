@@ -1,0 +1,31 @@
+
+
+.image {
+  position: relative;
+  margin-left: -100px;
+}
+
+.image:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  background-image: url('src/assets/ads.jpg');
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+}
+
+
+.card{
+    width: 900px;
+    height: 600px;
+    overflow: scroll;
+    margin-right: 100px;
+    border: 1px solid #ccc;
+
+  }

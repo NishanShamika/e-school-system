@@ -1,0 +1,107 @@
+
+
+<div class="card" style="width: 550px;">
+  <div class="card-header">
+    <b> PAPERS UPLOAD</b>
+  </div>
+  <div class="card-body">
+    <br>
+    <head>
+      <title>Font Awesome Icons</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      </head>
+      <form [formGroup]="form" (submit)="onSubmit()" novalidate>
+
+      <div>
+        <label class="font-weight-bold">Insert Subject name</label>
+        <br>
+        <br>
+        <!--<input formControlName="name" type="text" placeholder="Enter name..." />-->
+
+      <select class="form-control" formControlName="lessonname" style="width: 120px;"  name="lessonname">
+        <option value="Maths" >Maths </option>
+        <option value="English" >English </option>
+        <option value="Sinhala" >Sinhala </option>
+        <option value="History" >History </option>
+        <option value="IT" >IT </option>
+        <option value="Science" >Science </option>
+        <option value="Budhidhism" >Budhidhism </option>
+    </select>
+      </div>
+
+      <div *ngIf="form.controls['lessonname'].invalid && (form.controls['lessonname'].dirty || form.controls['lessonname'].touched)" class="alert alert-danger">
+        <div *ngIf="form.controls['lessonname'].errors.required">
+          lesson name is required.
+        </div>
+    </div>
+      <div>
+        <br>
+        <label class="font-weight-bold">Select term</label>
+
+        <br>
+        <select class="form-control"formControlName="name" style="width: 120px;"  name="name">
+          <option value="1 term" >1 term </option>
+          <option value="2 term" >2 term </option>
+          <option value="3 term" >3 term</option>
+
+      </select>
+      <div *ngIf="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)" class="alert alert-danger">
+        <div *ngIf="form.controls['name'].errors.required">
+          term is required.
+        </div>
+    </div>
+      </div>
+      <div>
+        <br>
+        <label class="font-weight-bold">Select Grade</label>
+
+        <br>
+        <select class="form-control"formControlName="grade" style="width: 120px;"  name="grade">
+          <option value="Grade 06" >Grade 06</option>
+          <option value="Grade 07" >Grade 07</option>
+          <option value="Grade 08" >Grade 08</option>
+          <option value="Grade 09" >Grade 09</option>
+          <option value="Grade 10" >Grade 10</option>
+          <option value="Grade 11" >Grade 11</option>
+
+      </select>
+      <div *ngIf="form.controls['grade'].invalid && (form.controls['grade'].dirty || form.controls['grade'].touched)" class="alert alert-danger">
+        <div *ngIf="form.controls['grade'].errors.required">
+          grade is required.
+        </div>
+    </div>
+      </div>
+      <div>
+        <br>
+        <label class="font-weight-bold">Select Paper</label>
+        <br>
+        <br>
+        <input (change)="onFileSelect($event)" accept="application/pdf" type="file"/>
+        <h5>pdf only</h5>
+      </div>
+
+      <div>
+        <br>
+        <label class="font-weight-bold">Upload the Paper </label>
+        <br>
+        <br>
+        <button type="submit"class="btn btn-primary" [disabled]="form.pristine || form.invalid" >Upload Paper <i class="fa fa-upload"></i></button>
+
+
+      </div>
+    </form>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+

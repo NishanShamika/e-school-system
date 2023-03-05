@@ -1,0 +1,42 @@
+
+<div
+    id="intro-example"
+    class="p-5 text-center bg-image"
+    style="background-image: url('assets/learning-image.jpg'); margin-left:-200px; width:1500px;"
+  >
+  <h1><b>User Login </b></h1>
+  
+    <div class="mask" align="center" >
+      <div class="d-flex justify-content-center align-items h-100 w-50">
+        <div class="card-body" style="background-color: rgba(0, 0, 0, 0.7);">
+       
+        <br><br>
+                <form class="form">
+                    <div class="form-group">
+                        
+                        <input id="inputs" [(ngModel)]="loginUserData.email" name="email" type="text" class="form-control rounded-0" required placeholder="Enter your email">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        
+                        <input id="inputs" [(ngModel)]="loginUserData.password" name="password" type="password" class="form-control rounded-0" required placeholder="Enter the password">
+                    </div>
+                    <br><br>
+
+                    <button style="width: 250px" (click)="loginUser()" type="button" class="btn btn-primary btn-lg btn-block float-center">Login</button>
+
+                </form>
+                <br>
+                <p> Forgot Your Password ? <p>
+                <a routerLink="/reset-password"><h3> Click Here to Reset </h3></a>
+
+            </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+

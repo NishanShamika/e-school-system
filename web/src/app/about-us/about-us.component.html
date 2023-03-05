@@ -1,0 +1,42 @@
+
+<div class="row">
+  <div class="col-3"><app-dashboard></app-dashboard></div>
+  <div class="col-9">
+  
+<body>
+    <h1 class="font-weight-bold" class="text-warning" >Changing about details <span class="badge badge-secondary"></span></h1>
+    <hr class="font-weight-bold"  />
+  <br>
+    <form [formGroup]="form"  (submit)="onSubmit()" >
+      <div>
+        <label class="font-weight-bold">Insert Title</label>
+        <br>
+        <br>
+        <input formControlName="title" type="text" placeholder="Enter Title..." />
+      </div>
+      <div>
+        <label class="font-weight-bold">Insert Body</label>
+        <br>
+        <br>
+        <input formControlName="body" type="text" placeholder="Enter Body..." />
+      </div>
+      <div>
+        <br>
+        <label class="font-weight-bold">Select photo</label>
+        <br>
+        <br>
+        <input (change)="onFileSelect($event)" type="file"/>
+      </div>
+     <!-- <div *ngIf="videoData">
+        <video>
+        <source [src]="videoData" [type]="form.value.name" /></video>
+      </div>-->
+      <div>
+        <br>
+        <label class="font-weight-bold">Upload the photo </label>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-success"  >Upload photo</button>
+      </div>
+    </form>
+    </body>

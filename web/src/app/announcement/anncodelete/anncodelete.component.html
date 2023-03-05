@@ -1,0 +1,35 @@
+
+<div class="card">
+  <head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+          <table class="table table-striped">
+            <thead class="thead-dark">
+
+                    <th scope="col">#</th>
+                    <th scope="col" style="width:auto">name</th>
+
+
+                    <th scope="col">Action</th>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let profiles of profiles; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{profiles.name}}</td>
+
+
+
+                    <td>
+                      <button (click)="deleteannouncement(profiles._id)"  class="btn btn-danger">Delete <i class="fa fa-trash-o"></i></button>
+                      &nbsp;&nbsp;
+
+
+                    </td>
+
+                <tr>
+            </tbody>
+        </table>
+        <br>
+        </div>

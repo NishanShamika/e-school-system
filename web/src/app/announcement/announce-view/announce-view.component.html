@@ -1,0 +1,25 @@
+<div class="test">
+
+
+
+<div class="container">
+	<div class="sliders">
+		<ng-container *ngFor="let img of profiles; let i = index">
+
+			<div class="slider" *ngIf="current == i" @fade>
+
+				<img [src]="img.imagePath" width="520px" height="345px" style="margin-top: 12px;" class="float-left" >
+        <div class="card-header">
+          <h2 style="text-align: center;width: 520px;color: rgb(255, 249, 250);margin-left: 500px;"><b>{{ img.name }}</b></h2></div>
+        <h4  style="width: 520px;padding: 10px;color: rgb(20, 18, 19);margin-top: -28px; margin-left: 520px;height: 315px;" >{{ img.des }}</h4>
+        <button type="button" (click)="deleteannouncement(img._id)" style="margin-left: 700px;" class="btn btn-danger">Delete <i class="fa fa-trash-o"></i></button>
+
+    </div>
+
+		</ng-container>
+
+	</div>
+
+
+
+

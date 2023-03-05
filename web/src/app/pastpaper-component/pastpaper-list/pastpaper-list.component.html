@@ -1,0 +1,54 @@
+
+<div class="row">
+  <div class="col-3"><app-dashboard></app-dashboard></div>
+  <div class="col-9">
+
+    <br>
+    <div class="card" style="width: 800px; background-color: white;">
+<div *ngFor="let paper of pastpapers; let i = index">
+  <head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+  <div class="card-body">
+
+    <h3>Subject :{{paper.lessonname}}</h3>
+
+    <h3>Term : {{paper.name}}</h3>
+
+
+    <h3>Grade : {{paper.grade}}</h3>
+
+
+  <h3>link : <h3 style="color: rgb(20, 20, 238);"> {{paper.paperPath}}</h3></h3>
+
+    <div class="card-header">
+
+  <h5 style="position: absolute;
+  right: 0;"> {{paper.created_at}}</h5>
+      <a [href]="paper.paperPath"> <button class="btn btn-primary btn-color btn-bg-color btn-sm col-xs-2 margin-left">PAPER <i class="fa fa-file-pdf-o"></i></button> </a>
+      <button (click)="deletePaper(paper._id)"  *ngIf="!_authservice.loggedIn()" type="button" class="btn btn-danger btn-color btn-bg-color btn-sm col-xs-2 margin-left">
+        <span class="glyphicon glyphicon-time" aria-hidden="true"></span> DELETE <i class="fa fa-trash-o"></i>
+      </button>
+
+      <button class="btn btn-primary btn-sm  margin-left" (click)="onTabClick(0)"> 06</button>
+      <button class="btn btn-secondary btn-sm" (click)="onTabClick(1)"> 07</button>
+      <button class="btn btn-success btn-sm" (click)="onTabClick(2)"> 08</button>
+      <button class="btn btn-danger btn-sm" (click)="onTabClick(3)"> 09</button>
+      <button class="btn btn-warning btn-sm" (click)="onTabClick(4)"> 10</button>
+      <button class="btn btn-dark btn-sm" (click)="onTabClick(5)"> 11</button>
+      <!--
+      <button type="button" class="btn btn-primary btn-color btn-bg-color btn-sm col-xs-2 margin-left">
+        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> UPLOAD<i class="fa fa-upload"></i>
+      </button>-->
+
+      <app-paperupload06 *ngIf="tabIndex === 0"> </app-paperupload06>
+      <app-paperupload07 *ngIf="tabIndex === 1"> </app-paperupload07>
+      <app-paperupload08 *ngIf="tabIndex === 2"> </app-paperupload08>
+      <app-paperupload09 *ngIf="tabIndex === 3"> </app-paperupload09>
+      <app-paperupload10 *ngIf="tabIndex === 4"> </app-paperupload10>
+      <app-paperupload11 *ngIf="tabIndex === 5"> </app-paperupload11>
+    </div>
+  </div>
+</div>

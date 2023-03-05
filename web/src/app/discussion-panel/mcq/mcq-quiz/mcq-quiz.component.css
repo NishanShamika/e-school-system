@@ -1,0 +1,20 @@
+.timeWrapper{
+    padding: 4vh;
+}
+
+.resultHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.btn-position {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 0.7vw;
+}
+
+.space{
+    margin-right: 1vw;
+}

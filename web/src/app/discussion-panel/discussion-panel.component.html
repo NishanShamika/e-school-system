@@ -1,0 +1,140 @@
+
+   <!-- {{discussionDataForm.value | json}}-->
+
+
+<div class="row">
+  <div class="col-3"><app-all-profiles></app-all-profiles></div>
+  <div class="col-9">
+
+<!--
+<br>
+<h1 textalign="center"> Discussion Panel </h1>
+<br><br>
+<form #form="ngForm">
+ <div class="container mt-1 mb-5">
+    <div class="d-flex justify-content-left row">
+        <div class="d-flex flex-column col-md-8">
+            <div class="coment-bottom bg-white p-2 px-4">
+                <div class="d-flex flex-row add-comment-section mt-4 mb-4" [class.has.error]="name.invalid && name.touched">
+                    <img class="img-fluid img-responsive rounded-circle mr-2" src="./assets/1.png" width="38">
+                    <input [(ngModel)]="InsertedDiscussionData.comment" #name="ngModel" name="comment" type="text" class="form-control mr-3" placeholder="Add comment" required>
+
+                    <input [hidden]="isHidden" [(ngModel)]="InsertedDiscussionData.name" #name="ngModel" name="name">
+
+                    <button [disabled]="name.invalid" (click)="postDiscussion()" (click)="refreshPage()"  class="btn btn-primary" type="button">Comment</button></div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+
+<div class="container-fluid mt-100" *ngFor="let discussion of discussions">
+     <div class="row">
+         <div class="col-md-12">
+             <div class="card mb-4">
+                 <div class="card-header">
+                     <div class="media flex-wrap w-100 align-items-center"> <img src="./assets/1.png" class="d-block ui-w-40 rounded-circle" alt="">
+                         <div class="media-body ml-3"> <a href="javascript:void(0)" data-abc="true">{{discussion.name}}</a>
+                             <div class="text-muted small">Date: {{discussion.dateofcomment}}</div>
+                         </div>
+                         <div class="text-muted small ml-3">
+                             <div><strong>{{discussion.dateofregister}}</strong></div>
+                             <div><strong>{{discussion.role}}</strong></div>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="card-body">
+                     <p>
+                        {{discussion.comment}}
+                     </p>
+                 </div>
+                 <div class="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
+                     <div class="px-4 pt-3"> <a href="javascript:void(0)" class="text-muted d-inline-flex align-items-center align-middle" data-abc="true"> <i class="fa fa-heart text-danger"></i>&nbsp; <span class="align-middle">445</span> </a> <span class="text-muted d-inline-flex align-items-center align-middle ml-4"></span> </div>
+                     <div class="px-4 pt-3"> <button type="button" class="btn btn-primary"><i class="ion ion-md-create"></i>&nbsp; Reply</button>
+                      <button type="button"  *ngIf="!_authservice.loggedIn() && adminservice.adminLoggedIn()" (click)="deletePost(discussion._id)"  class="btn btn-danger">Delete <i class="fa fa-trash-o"></i></button> </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+-->
+<!--start of discussions-->
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<section class="content-item" id="comments">
+
+    <div class="container">   
+    	<div class="row">
+            <div class="col-sm-8">   
+                <form #form="ngForm">
+                	<h3 class="pull-left">New Comment</h3>
+                	<button type="button" (click)="postDiscussion()" (click)="refreshPage()" class="btn btn-normal pull-right">Submit</button>
+                    <fieldset>
+                        <div class="row">
+                            <div class="col-sm-3 col-lg-2 hidden-xs">
+                            	<img *ngIf="!_authservice.loggedIn()" class="img-responsive" src="./assets/1.png" alt="" width="70" height="70">
+                                <img *ngIf="_authservice.loggedIn()" class="img-responsive" src="{{userData.imagePath}}" alt="" width="70" height="70">
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-9 col-lg-10">
+                                <textarea [(ngModel)]="InsertedDiscussionData.comment" #name="ngModel" name="comment" class="form-control" id="message" placeholder="Your message" required=""></textarea>
+                            </div>
+                        </div>  	
+                    </fieldset>
+                </form>
+                
+                <h3>{{length}} comments</h3>
+                
+                <!-- COMMENT 1 - START -->
+                <div class="media" *ngFor="let discussion of discussions">
+                    <a class="pull-left" href="#"><img class="media-object" src={{discussion.imagePath}} alt=""></a>
+                    <div class="media-body">
+                        <h3 class="media-heading">{{discussion.name}}</h3>
+                        <p>{{discussion.comment}}</p>
+                        <ul class="list-unstyled list-inline media-detail pull-left">
+                            <li><i class="fa fa-calendar"></i>{{discussion.dateofcomment}}</li>
+                            <li>
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="form-group col-xs-12 col-sm-9 col-lg-10 temp">
+                                            <textarea [(ngModel)]="reply.reply" #name="ngModel" name="replyText" class="form-control" id="reply" placeholder="Reply ..."></textarea>
+                                            <button type="button" class="btn btn-primary temp-btn-height" (click)="postReply(discussion._id)" (click)="refreshPage()">Reply</button>
+                                        </div>
+
+                                        <!--Reply start here-->
+                                        <ngb-accordion (panelChange)="beforeChange($event)">
+                                            <ngb-panel id="preventchange-1" title="Replies">
+                                              <ng-template ngbPanelContent>
+                                                  <div class="media" *ngFor="let reply of discussion.discussionReply">
+                                                    <a class="pull-left" href="#"><img class="media-object" src={{reply.imagePath}} alt=""></a>
+                                                    <div class="media-body">
+                                                        <h3 class="media-heading">{{reply.name}}</h3>
+                                                        <h4>{{reply.reply}}</h4>
+                                                        <ul class="list-unstyled list-inline media-detail pull-left">
+                                                            <li><i class="fa fa-calendar"></i>{{reply.dateofcomment}}</li>
+                                                        </ul>
+                                                        <ul class="list-unstyled list-inline media-detail pull-right">
+                                                            <button type="button"  
+                                                            *ngIf="!_authservice.loggedIn() && adminservice.adminLoggedIn()" (click)="deletePost(discussion._id)" 
+                                                            class="btn btn-danger">Delete <i class="fa fa-trash-o"></i></button> 
+                                                        </ul>
+                                                    </div>
+                                                  </div>
+                                              </ng-template>
+                                            </ngb-panel>
+                                          </ngb-accordion>
+                                          <!--Reply ends here-->
+                                    </div>  	
+                                </fieldset>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled list-inline media-detail pull-right">
+                            
+                            <button type="button"  
+                            *ngIf="!_authservice.loggedIn() && adminservice.adminLoggedIn()" (click)="deletePost(discussion._id)" 
+                            class="btn btn-danger">Delete <i class="fa fa-trash-o"></i></button> 
+                        </ul>
+                    </div>
+                </div>
+                <!-- COMMENT 1 - END -->
+
+

@@ -1,0 +1,117 @@
+.view img {
+    width: 1200px;
+}
+.intro {
+    background-color: rgb(162, 255, 255);
+    width: 1500px;
+    margin-left: -195px;
+}
+
+.card {
+    cursor: pointer
+}
+
+.hd {
+    font-size: 25px;
+    font-weight: 550
+}
+
+.card.hover,
+.card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
+    background-color: rgb(226, 224, 224);
+}
+
+.img {
+    margin-bottom: 35px;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222)
+}
+
+.card-title {
+    font-weight: 600
+}
+
+button.focus,
+button:focus {
+    outline: 0;
+    box-shadow: none !important
+}
+
+.ft {
+    margin-top: 25px
+}
+
+.chk {
+    margin-bottom: 5px
+}
+
+.rck {
+    margin-top: 20px;
+    padding-bottom: 15px
+}
+
+.bd-example {
+    width: 1500px;
+    margin-left: -195px;
+    margin-top: -250px;
+
+}
+.carousel-item {
+    height: 600px;
+}
+
+
+.acc{
+  margin-bottom: 540px;
+  margin-top: -40px;
+}
+
+
+/* general styling */
+
+  
+  
+  
+  .container {
+
+    color: rgb(194, 0, 0);
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  h1 {
+    font-weight: normal;
+    letter-spacing: .125rem;
+    text-transform: uppercase;
+  }
+  
+  .countList {
+    display: inline-block;
+    font-size: 1.5em;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+  }
+  
+  .countdown {
+    display: block;
+    font-size: 4.5rem;
+  }
+
+  
+  @media all and (max-width: 768px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+    
+    .countList {
+      font-size: 1.125rem;
+      padding: .75rem;
+    }
+    
+    .countdown {
+      font-size: 3.375rem;
+    }
+  }
+

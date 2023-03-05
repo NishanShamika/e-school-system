@@ -1,0 +1,29 @@
+
+.background{
+    margin-left: 1vw;
+    margin-right: -30vw;
+
+}
+
+.page-Title-Wrapper{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    margin-left: 22%;
+}
+
+.question-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card1{
+  width: 1200px;
+  height: 600px;
+  overflow: scroll;
+  margin-right: 100px;
+  margin-left: -150px;
+  border: 1px solid #ccc;
+
+}

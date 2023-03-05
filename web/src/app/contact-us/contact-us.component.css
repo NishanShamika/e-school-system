@@ -1,0 +1,51 @@
+#intro-example{
+    background-attachment: fixed;
+    height: 100%;
+    margin-top: -80px;
+}
+
+
+.contactMask{
+    margin-left: 200px;
+    width: 1000px;
+    background-attachment: fixed;
+}
+
+
+
+.mask {
+    
+     
+    height: 600px;
+    width: 600px;
+    background-attachment: fixed;
+    
+    
+}
+
+#inputs{
+
+    background-image:linear-gradient(to right, rgb(235, 211, 211), rgb(102, 174, 223));
+    background-repeat:repeat-x;
+    border:0px solid #d1c7ac;
+    width: 350px;
+    color:red;
+    padding:6px;
+    margin-left:30px;
+    margin-bottom:1px;
+    font-family:tahoma, arial, sans-serif;
+    
+    background-color: transparent;
+
+    
+    
+    }
+
+    h1 {
+        color:aliceblue;
+        font-size: 40px;
+        font-family:Arial, Helvetica, sans-serif;
+        
+    }
+
+

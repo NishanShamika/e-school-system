@@ -1,0 +1,59 @@
+
+
+  <div
+    id="intro-example"
+    class="p-5 text-center bg-image"
+    style="background-image: url('assets/eschool.jpeg'); margin-left:-200px; width:1500px; height:800px; margin-top:-80px;"
+  >
+  <div>
+<div
+    class="contactMask"
+    style="background-color: rgba(0, 81, 255, 1);"
+  >
+<br><br>
+
+<div class="d-flex justify-content-between">
+  <div class="mask">
+    <div>
+      <div>
+      <h1>Contact Us</h1>
+        <form #form="ngForm" class="well" novalidate>
+        <form #subform="ngForm">
+          <div class="form-group">
+            <br>
+            <input id="inputs" [(ngModel)]="InsertedMessageData.name" #name="ngModel" name="name" type="text" class="form-control rounded-0" placeholder="Enter Name" required>
+          </div>
+
+
+          <div class="form-group">
+            <br>
+            <input id="inputs" [(ngModel)]="InsertedMessageData.topic" #name="ngModel" name="topic" type="text" class="form-control rounded-0" placeholder="Enter topic">
+          </div>
+
+          <div class="form-group">
+            <br>
+            <input id="inputs" [(ngModel)]="InsertedMessageData.email" #name="ngModel" name="email" type="text" class="form-control rounded-0" placeholder="Enter Email" required>
+          </div>
+
+          <div class="form-group">
+            <br>
+            <textarea id="inputs" rows="4" [(ngModel)]="InsertedMessageData.message" #name="ngModel" name="message" type="text" class="form-control rounded-0" placeholder="Enter Your Message" required>
+            </textarea>
+          </div>
+          <br>
+          <button type="submit" (click)="postMessage()" (click)="refreshPage()" class="btn btn-primary" ngModel ngDefaultControl [ngModelOptions]="{standalone: true}" [disabled]="!subform.valid || !form.valid"> Send </button> &nbsp;
+          <button type="reset" class="btn btn-light"> Clear </button>
+        </form>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="intro">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.9255965271336!2d80.39445331459046!3d6.53108129527603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae3c334900183b5%3A0xb69540b61889c713!2sNenasala%20Kalawana%20Computer%20%26%20Vocational%20Training%20Center!5e0!3m2!1sen!2slk!4v1617608276267!5m2!1sen!2slk"
+      width="500" height="500" style="border:2;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</div>
+
+</div>
+</div>

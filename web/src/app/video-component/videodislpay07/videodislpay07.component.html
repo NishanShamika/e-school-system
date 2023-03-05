@@ -1,0 +1,66 @@
+
+<div class="card mb-3">
+  <img class="card-img-top" src="./assets/grade07.jpg"  style="height: 250px;"      alt="Card image cap">
+<div class="card" style="width: 18rem; height: 15rem;">
+  <div class="card-body">
+    <h3>Select Subject</h3>
+    <select id="myid" [(ngModel)]="name1" class="form-control" #name="ngModel" name="name1">
+      <option value="Maths" >Maths </option>
+      <option value="English" >English </option>
+      <option value="Sinhala" >Sinhala </option>
+      <option value="History" >History </option>
+      <option value="IT" >IT </option>
+      <option value="Science" >Science </option>
+      <option value="Budhidhism" >Budhidhism </option>
+
+      </select>
+      <br>
+    <button  [(ngModel)]="name1" #name="ngModel" name="name1"
+    value="Maths"
+     value="English"
+      value="Sinhala"
+      value="History"
+      value="IT"
+      value="Science"
+      value="Budhidhism"
+       type="button" class="btn btn-success" (click)="searchVideo07()" ngModel>
+
+      <span class="glyphicon glyphicon-search"></span> Search
+    </button>
+  </div>
+</div>
+
+    <br>
+    <br>
+    <form class="form-inline md-form form-sm mt-0" #form="ngForm">
+
+
+
+
+
+
+    </form>
+
+
+    <div class="row mt-5">
+      <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        </head>
+      <div class="col-md-4 mb-3" *ngFor="let video of searchedVideo">
+        <div class="card" style="width: 330px; height: 21rem">
+
+
+
+
+
+          <video  source [src]="video.videoPath"class="embed-responsive-item" class="gallery" type="video/mp4" width="330px" height="300px" controlsList="nodownload" oncontextmenu="return false;" controls></video>
+       <h4 style="color: rgb(37, 35, 35);"><b>{{ video.videoname }}</b></h4>
+
+          <h3 style="color: rgb(37, 35, 35)"> {{ video.subjectname }}</h3>
+          <h4 style="color: rgb(37, 35, 35)">{{ video.des }}</h4>
+          <button type="button" style="width: 100px;" *ngIf="!_authservice.loggedIn() && adminservice.adminLoggedIn()"  (click)="deleteVideo(video._id)" class="btn btn-danger">Delete <i class="fa fa-trash-o"></i></button>
+          <br>
+        </div>
+        </div>
+      </div>
+

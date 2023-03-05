@@ -1,0 +1,11 @@
+
+
+
+.card{
+  width: 900px;
+  height: 600px;
+  overflow: scroll;
+  margin-right: 100px;
+  border: 1px solid #ccc;
+
+}

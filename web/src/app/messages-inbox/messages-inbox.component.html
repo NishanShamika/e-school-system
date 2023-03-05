@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-3"><app-dashboard></app-dashboard></div>
+  <div class="col-9">
+    <br>
+    <br>
+    <div class="card" style="width: 800px; background-color: rgb(63, 169, 211);">
+<h2 style ="text-align: center">Inbox Messages List </h2>
+<br>
+
+
+<div class="alert alert-success" role="alert" *ngFor="let message of messages">
+  <p class="alert-heading">From : {{message.name}}</p>
+  <p> Message : {{message.message}}</p>
+  <hr>
+
+
+    <h3> Email : {{message.email}}  </h3>
+
+    <button
+    type="button"
+    (click)="deletemessage(message._id)"
+    class="btn btn-danger"
+  >delete</button>
+
+</div>

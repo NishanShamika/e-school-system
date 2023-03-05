@@ -1,0 +1,66 @@
+<div
+    id="intro-example"
+    class="p-3 text-center bg-image"
+    style="background-image: url('assets/Education.jpg'); margin-left:-200px; width:1500px;"
+  >
+  
+    <div class="mask" align="center" >
+      <div class="d-flex justify-content-center align-items h-200">
+        <div class="card-body" style="background-color: rgba(0, 0, 0, 0.7);">
+        <aside><h1><b>Student Sign Up </b></h1></aside><br>
+                <form [formGroup]="userdataForm" (ngSubmit)="registerUser()">
+          <div class="form-row">
+              <div class="form-group col-5">
+                  <input id="inputs" type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" placeholder="Enter Name"/>
+                  <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                      <div *ngIf="f.name.errors.required">First Name is required</div>
+                  </div>
+              </div>
+          </div>
+
+            <div class="form-group">
+              <input id="inputs" type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" placeholder="Enter Email"/>
+          </div>
+
+
+
+        <div class="form-group">
+              <input id="inputs" type="text" formControlName="grade" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.grade.errors }" placeholder="Enter Grade"/>
+              
+          </div>
+
+          <div class="form-group">
+              <input id="inputs" type="text" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" placeholder="Enter Phone Number"/>
+              
+          </div>
+
+          <div class="form-group">
+              <input id="inputs" type="text" formControlName="school" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.School.errors }" placeholder="Enter School"/>
+              
+          </div>
+
+          <div class="form-group">  
+                  <input id="inputs" type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="Enter Password" />
+                  <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                      <div *ngIf="f.password.errors.required">Password is required</div>
+                      <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                  </div>
+            </div>
+            <div class="form-group"> 
+                  <input id="inputs" type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" placeholder="Confirm Password" />
+
+                  <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                      <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                      <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+                  </div>
+          </div>
+          <div class="text-center">
+              <button class="btn btn-primary float-left" [disabled]="userdataForm.pristine || userdataForm.invalid">Register</button>
+          </div>
+      </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

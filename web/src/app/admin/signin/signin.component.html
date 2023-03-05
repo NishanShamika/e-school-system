@@ -1,0 +1,34 @@
+
+<div
+id="intro-example"
+class="p-5 text-center bg-image"
+style="background-image: url('assets/learning-image.jpg'); margin-left:-200px; width:1500px;"
+>
+  <h1><b>Admin Login </b></h1>
+    <div class="mask" align="center" >
+      <div class="d-flex justify-content-center align-items h-100 w-50">
+        <div class="card-body" style="background-color: rgba(0, 0, 0, 0.7);">
+
+        <br>
+
+  <form class="px-4 py-3">
+    <form class="form-signin" [formGroup]="signinForm" (ngSubmit)="loginUser()">
+
+        <div class="form-group">
+
+            <input id="inputs" type="email" class="form-control" formControlName="email" placeholder="Enter email" required>
+        </div>
+        <br>
+        <div class="form-group">
+
+            <input id="inputs" type="password" class="form-control" formControlName="password" placeholder="Password">
+        </div>
+        <br><br>
+        <button style="width: 250px" type="submit" class="btn btn-primary btn-lg btn-block float-center">Sign In</button>
+    </form>
+  </form>
+  </div>
+      </div>
+    </div>
+  </div>
+

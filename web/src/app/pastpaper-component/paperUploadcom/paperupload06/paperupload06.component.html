@@ -1,0 +1,38 @@
+<div class="test">
+  <form class="form" #f="ngForm" novalidate>
+
+    <form #subForm="ngForm" [class.has-error]="!subForm.valid">
+
+
+  <select class="form-control" #name="ngModel"  [(ngModel)]="uploadlink.name" style="width: 120px;"  name="name" required>
+    <option value="Maths" >Maths </option>
+    <option value="English" >English </option>
+    <option value="Sinhala" >Sinhala </option>
+    <option value="History" >History </option>
+    <option value="IT" >IT </option>
+    <option value="Science" >Science </option>
+    <option value="Budhidhism" >Budhidhism </option>
+</select>
+<input type="text" style="height:30px;font-size:9pt;width: 85px;" style="width: 120px;" [(ngModel)]='uploadlink.paperPath' class="form-control" id="exampleDropdownFormfirstName" placeholder="upload link"name="paperPath" required >
+    <select class="form-control"  #name="ngModel"  [(ngModel)]="uploadlink.subjectname" style="width: 120px;"  name="subjectname" required>
+      <option value="1 term" >1 term </option>
+      <option value="2 term" >2 term </option>
+      <option value="3 term" >3 term</option>
+
+  </select>
+
+
+
+
+  <button  class="btn btn-primary btn-sm"(click)='sendData()' [disabled]="!f.valid || !subForm.valid" type="submit">Upload <i class="fa fa-upload"></i></button>
+</form>
+
+</form>
+
+</div>
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+.margin-left {
+  margin-left: 80px !important;
+}
+.table {
+  margin-left: -100px;
+}
+
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+
+  font-size: 12px;
+  text-align: center;
+}
+
+.card-data {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.mycontent-left {
+  border-right: 1px dashed #333;
+}
+
+.card{
+
+
+  margin-top: -100px;
+    width: 2000px;
+    height: 600px;
+    overflow: scroll;
+    margin-left: 100px;
+    border: 1px solid #ccc;
+  }

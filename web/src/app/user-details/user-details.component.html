@@ -1,0 +1,67 @@
+
+
+
+<div class="row">
+  <div class="col-3"><app-dashboard></app-dashboard></div>
+  <div class="col-9">
+    <div class="card m-5" style="overflow: scroll; border: 1px solid #ccc;
+    height: 450px;" >
+
+    <table class="table table-dark">
+  <thead class="thead-dark">
+
+
+
+
+<th style="width:180px">Name </th>
+
+<th style="width:200px">Email </th>
+<th style="width:200px">Access </th>
+<th style="width:200px">Give </th>
+<th style="width:200px">Remove </th>
+  </thead>
+
+
+  <tbody >
+      <tr style="width:200px"  *ngFor="let u of Users ; let i = index">
+
+
+
+
+
+        <td  style="width:250px ;" ><b>{{u.name}}</b></td>
+
+        <td  style="width:250px ;" ><b>{{u.email}}</b></td>
+
+        <td  style="width:250px ;" ><b>{{u.access}}</b></td>
+
+        <td  style="width:250px ;" >   <button type="button" (click)="premiumUser(u._id)" (click)="refreshPage()" class="btn btn-primary"> Make Premium</button>
+</td>
+
+          <td  style="width:250px ;" >
+        <button type="button"  (click)="deleteUser(u._id)"  class="btn btn-danger">Delete <i class="fa fa-trash-o"></i></button>  </td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

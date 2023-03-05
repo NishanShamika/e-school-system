@@ -1,0 +1,44 @@
+
+<div class="row">
+  <div class="col-3"><app-dashboard></app-dashboard></div>
+  <div class="col-9">
+  
+
+
+
+
+  <div class="card-header">
+    <h1 class="font-weight-bold" style="color: rgb(106, 20, 219);" >Create Announcement</h1>
+  </div>
+
+
+
+
+
+  <hr />
+  <form [formGroup]="form" (submit)="onSubmit()" novalidate>
+    <div>
+      <input formControlName="name" type="text" placeholder="Enter name..." required/>
+      <br>
+      <br>
+    </div>
+    <div>
+      <textarea formControlName="des" rows="4" cols="50" type="text" placeholder="Enter description..." required></textarea>
+      <br>
+      <br>
+      <br>
+    </div>
+    <div>
+      <input (change)="onFileSelect($event)"   formControlName="image1" type="file" accept="image/gif,image/jpeg,image/png"  required="true"/>
+      <br>
+      <br>
+    </div>
+
+    <div>
+      <button type="submit" class="btn btn-primary" [disabled]="form.pristine || form.invalid">Create Accoument</button>
+      <br>
+      <br>
+    </div>
+  </form>
+
+  <app-anncodelete></app-anncodelete>

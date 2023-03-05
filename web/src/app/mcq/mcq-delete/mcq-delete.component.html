@@ -1,0 +1,16 @@
+<table class="table table-striped" *ngIf="isDataAvailable==true">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Question</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let question of mcqList; let index = index">
+        <th scope="row">{{index + 1}}</th>
+        <td>{{question.name}}</td>
+        <button type="button" class="btn btn-link" (click)="deleteMcq(question._id)">Delete</button>
+      </tr>
+    </tbody>
+  </table>

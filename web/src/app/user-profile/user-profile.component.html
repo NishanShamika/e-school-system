@@ -1,0 +1,186 @@
+<!--
+ <hr />
+  <form [formGroup]="form" (submit)="onSubmit()">
+    <div>
+      <input (change)="onFileSelect($event)" type="file" />
+      <br>
+      <br>
+    </div>
+
+    <div>
+      <button type="submit" class="btn btn-primary">Create Accoument</button>
+      <br>
+      <br>
+    </div>
+  </form>
+-->
+<div class="datetime">
+
+  <h1>Exam Date Time Update</h1>
+    <input type="datetime-local" name="datetime-local"  [(ngModel)]="countDown">
+    <button class="button button1"  (click)="UpdateExamDate(userData._id)" (click)="refreshPage()">Update</button>
+  </div>
+
+
+<div *ngIf="editAlert"><br>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Successfully Edited !</strong> Changes will be appeared next time you login.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+</div>
+<div class="intro">
+<div class="container emp-profile">
+            <form method="post">
+                <div class="row" >
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                           <a href={{userData.imagePath}}> <img [src]="_d.bypassSecurityTrustUrl(imgsrc1)" alt=""/></a>
+                           <form [formGroup]="form" (submit)="onSubmit()">
+                            <div class="file btn btn-lg btn-primary">
+                                Choose New Photo
+                                <input type="file" (change)="onFileSelect($event)" accept="image/gif, image/jpeg,image/png"/>
+                            </div>
+
+                            </form>
+
+                        </div>
+
+                        <br>
+                        <div class="nwbtn">
+                        <button type="button" class="btn btn-primary" (click)="refreshPage()" (click)="onSubmit()">Confirm Changes</button>
+                        </div>
+                        <br><br>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                                    <h5>
+                                        {{userData.name}}
+                                    </h5>
+                                    <br>
+                                    <h6>
+                                        {{userData.role}}
+                                    </h6>
+                                   <p *ngIf="!isLoggedTeacher()" class="animated_rainbow_1">Level : <span>{{userData.level}}</span></p>
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div *ngIf="!auth.isPremiumUser()">
+                        <a href="https://app.payhere.co/buildzone/e-school-system" data-payhere-embed="https://app.payhere.co/buildzone/e-school-system"><button type="button" class="btn btn-primary">Be a Premium User</button></a>
+                        <script src="https://app.payhere.co/embed/embed.js"></script>
+
+                    </div>
+
+                        <div class="animated_rainbow_1" *ngIf="auth.isPremiumUser()">Premium User</div>
+
+
+
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-4" >
+
+                        <div class="profile-work">
+
+                        <button type="button" class="profile-edit-btn" name="btnAddMore" (click)="showForm()">Edit Profile</button>
+                        <br><br>
+                        <div [hidden]="isShow">
+
+                        <div class="mask" align="center" >
+                        <div class="d-flex justify-content align-items">
+                        <div class="card-body" style="background-color: rgba(0, 163, 255, 0.24);">
+
+                        <form #form="ngForm" class="well" (ngSubmit)="onSubmit()">
+                        <label for="name">Name: </label>
+                        <div class="form-group">
+                        <input [(ngModel)]="editedUserData.name" #name="ngModel" name="name" type="text" class="form-control rounded-0" placeholder="{{userData.name}}" [ngModelOptions]="{standalone: true}"/>
+                        <br>
+                        </div>
+                        <label for="email">Email: </label>
+                        <div class="form-group">
+                        <input [(ngModel)]="editedUserData.email" #name="ngModel" name="email" type="text" class="form-control rounded-0" placeholder="{{userData.email}}" [ngModelOptions]="{standalone: true}"/>
+                        <br>
+                        </div>
+                        <label for="grade">Grade: </label>
+                        <div class="form-group">
+                        <input [(ngModel)]="editedUserData.grade" #name="ngModel" name="grade" type="text" class="form-control rounded-0" placeholder="{{userData.grade}}" [ngModelOptions]="{standalone: true}"/>
+                        <br>
+                        </div>
+                        <label for="phone">Phone: </label>
+                        <div class="form-group">
+                        <input [(ngModel)]="editedUserData.phone" #name="ngModel" name="phone" type="text" class="form-control rounded-0" placeholder="{{userData.phone}}" [ngModelOptions]="{standalone: true}"/>
+                        <br>
+                        </div>
+                        <label for="school">School: </label>
+                        <div class="form-group">
+                        <input [(ngModel)]="editedUserData.school" #name="ngModel" name="school" type="text" class="form-control rounded-0" placeholder="{{userData.school}}" [ngModelOptions]="{standalone: true}"/>
+                        <br>
+                        </div>
+                        <label for="password">Password: <span class="text-muted">*required</span></label>
+                        <div class="form-group">
+                        <input [(ngModel)]="editedUserData.password" #name="ngModel" name="password" type="password" class="form-control rounded-0" placeholder="{{password}}" [ngModelOptions]="{standalone: true}" required/>
+
+
+                        <br>
+                        </div>
+                        <button class="btn btn-primary" [disabled]="!form.valid" type="submit" (click)="updateUser()" (click)="refreshPage()">Change</button>
+                        </form>
+
+
+                        </div></div></div>
+
+
+                        </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-8" style="margin-top:-200px;">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label>Name</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{userData.name}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label>Email</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{userData.email}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label>Phone</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{userData.phone}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label>School</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{userData.school}}</p>
+                                            </div>
+                                        </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+</div>

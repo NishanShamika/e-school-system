@@ -1,0 +1,123 @@
+
+
+
+<div>
+
+
+<div class="card" style="width: 550px;">
+  <div class="card-header">
+    <b> VIDEO UPLOAD</b>
+  </div>
+  <div class="card-body">
+    <br>
+    <head>
+      <title>Font Awesome Icons</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      </head>
+    <form [formGroup]="form" (submit)="onSubmit()" novalidate>
+
+      <div>
+        <label class="font-weight-bold">Insert Subject name</label>
+        <br>
+        <br>
+
+
+      <select class="form-control"formControlName="subjectname" style="width: 120px;"  name="subjectname">
+        <option value="Maths" >Maths </option>
+        <option value="English" >English </option>
+        <option value="Sinhala" >Sinhala </option>
+        <option value="History" >History </option>
+        <option value="IT" >IT </option>
+        <option value="Science" >Science </option>
+        <option value="Budhidhism" >Budhidhism </option>
+    </select>
+    </div>
+    <div *ngIf="form.controls['subjectname'].invalid && (form.controls['subjectname'].dirty || form.controls['subjectname'].touched)" class="alert alert-danger">
+      <div *ngIf="form.controls['subjectname'].errors.required">
+        subjectname is required.
+      </div>
+  </div>
+
+      <div>
+        <br>
+        <label class="font-weight-bold">Select Lesson name</label>
+
+        <br>
+        <select class="form-control"formControlName="name" style="width: 120px;"  name="name">
+          <option value="1 lesson" >1 lesson </option>
+          <option value="2 lesson" >2 lesson </option>
+          <option value="3 lesson" >3 lesson</option>
+          <option value="4 lesson" >4 lesson </option>
+          <option value="5 lesson" >5 lesson</option>
+          <option value="6 lesson" >6 lesson </option>
+          <option value="7 lesson" >7 lesson</option>
+          <option value="8 lesson" >8 lesson </option>
+          <option value="9 lesson" >9 lesson</option>
+          <option value="10 lesson">10 lesson</option>
+      </select>
+      <div *ngIf="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)" class="alert alert-danger">
+        <div *ngIf="form.controls['name'].errors.required">
+          Lesson number is required.
+        </div>
+    </div>
+      </div>
+
+<div>
+  <br>
+  <label class="font-weight-bold">sort description of video</label>
+  <br>
+  <textarea class="form-control"formControlName="des" style="width: 320px;"  name="des"></textarea>
+
+</div>
+
+
+
+
+
+
+
+
+
+      <div>
+        <br>
+        <label class="font-weight-bold">Select Grade</label>
+
+        <br>
+        <select class="form-control"formControlName="insertgrade" style="width: 120px;"  name="insertgrade">
+          <option value="Grade 06" >Grade 06</option>
+          <option value="Grade 07" >Grade 07</option>
+          <option value="Grade 08" >Grade 08</option>
+          <option value="Grade 09" >Grade 09</option>
+          <option value="Grade 10" >Grade 10</option>
+          <option value="Grade 11" >Grade 11</option>
+
+      </select>
+      <div *ngIf="form.controls['insertgrade'].invalid && (form.controls['insertgrade'].dirty || form.controls['insertgrade'].touched)" class="alert alert-danger">
+        <div *ngIf="form.controls['insertgrade'].errors.required">
+          Grade is required.
+        </div>
+    </div>
+      </div>
+      <div>
+        <br>
+        <label class="font-weight-bold">Select Video</label>
+        <br>
+        <br>
+        <input (change)="onFileSelect($event)" type="file" accept='video/mp4, video/mpeg, video/3gpp'/>
+      </div>
+
+      <div>
+        <br>
+        <label class="font-weight-bold">Upload the Video </label>
+        <br>
+        <br>
+        <button type="submit"class="btn btn-primary"  [disabled]="form.pristine || form.invalid" >Upload  <i class="fa fa-upload"></i></button>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+
+

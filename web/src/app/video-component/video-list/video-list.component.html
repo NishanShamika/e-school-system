@@ -1,0 +1,75 @@
+
+
+
+<div class="row">
+  <div class="col-3"><app-dashboard></app-dashboard></div>
+  <div class="col-9">
+
+
+    <br>
+    <div class="card" style="width: 800px; background-color: white;">
+<div  style="width:900px"*ngFor="let video of videos; let i = index">
+  <head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+  <div class="card-body">
+
+    <h3>Subject :{{video.subjectname}}</h3>
+
+    <h3>Lesson : {{video.name}}</h3>
+    <h3>Description: {{video.des}}</h3>
+    <h3>Grade : {{video.insertgrade}}</h3>
+
+
+  <h3>link : <h3 style="color: rgb(61, 22, 202);">{{video.videoPath}}</h3></h3>
+
+  <video source [src]="video.videoPath |safe "class="embed-responsive-item" style="margin-top: -300px;margin-left: 500px;" type="video/mp4" width="180" height="200" controls></video>
+    <div class="card-header">
+      <h5 style="position: absolute;
+      right: 0; " > {{video.created_at}}</h5>
+      <button (click)="deleteVideo(video._id)"   type="button" class="btn btn-danger btn-color btn-bg-color btn-sm col-xs-2 margin-left">
+        <span class="glyphicon glyphicon-time" aria-hidden="true"></span> DELETE <i class="fa fa-trash-o"></i>
+      </button>
+
+      <button class="btn btn-primary btn-sm margin-left" (click)="onTabClick(0)"> 06</button>
+        <button class="btn btn-secondary btn-sm" (click)="onTabClick(1)"> 07</button>
+        <button class="btn btn-success btn-sm" (click)="onTabClick(2)"> 08</button>
+        <button class="btn btn-danger btn-sm" (click)="onTabClick(3)"> 09</button>
+        <button class="btn btn-warning btn-sm" (click)="onTabClick(4)"> 10</button>
+        <button class="btn btn-dark btn-sm" (click)="onTabClick(5)"> 11</button>
+      <!--
+      <button type="button" class="btn btn-primary btn-color btn-bg-color btn-sm col-xs-2 margin-left">
+        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> UPLOAD<i class="fa fa-upload"></i>
+      </button>-->
+
+      <app-videoupload07  *ngIf="tabIndex === 1"> </app-videoupload07>
+      <app-videoupload06  *ngIf="tabIndex === 0"> </app-videoupload06>
+      <app-videoupload8  *ngIf="tabIndex === 2"> </app-videoupload8>
+      <app-videoupload9  *ngIf="tabIndex === 3"> </app-videoupload9>
+      <app-videoupload10  *ngIf="tabIndex === 4"> </app-videoupload10>
+      <app-videoupload11  *ngIf="tabIndex === 5"> </app-videoupload11>
+    </div>
+  </div>
+</div>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,26 @@
+<mat-grid-list cols="2" rowHeight="650px" gutterSize="50px">
+    <div *ngFor="let input of about">
+   
+      
+   
+       <mat-grid-tile>
+           <mat-card class="example-card">
+               <mat-card-header>
+                 <div mat-card-avatar class="example-header-image" ><img mat-card-avatar src='{{input.documentPath}}' ></div>
+                 <mat-card-title>{{input.title}}</mat-card-title>
+               </mat-card-header>
+               <img mat-card-image src='{{input.documentPath}}' width="300px" height="300px" alt="">
+               <mat-card-content>
+                 <p>
+                 {{input.body}}
+                 </p>
+               </mat-card-content>
+             </mat-card>
+             
+       </mat-grid-tile> 
+   
+   
+   </div>
+   
+   </mat-grid-list>
+   

@@ -1,0 +1,69 @@
+
+
+<div class="row">
+  <div class="col-3"><app-dashboard></app-dashboard></div>
+  <div class="col-9">
+
+
+    <div class="card" style="width: 900px; height: 535px;">
+  <head><meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+  <div class="card-header">
+    <h1 class="font-weight-bold" >Create Advertistment</h1>
+  </div>
+
+
+
+
+
+  <hr />
+  <form [formGroup]="form" (submit)="onSubmit()" novalidate>
+
+    <br>
+    <div>
+      <label class="font-weight-bold">Insert Onwer name</label>
+      <br>
+      <input formControlName="name" type="text" placeholder="Enter name..." required/>
+    </div>
+     <div>
+      <label class="font-weight-bold">Insert End Date</label>
+      <br>
+      <input formControlName="date" type="date"   placeholder="Enter date..." required/>
+    </div>
+    <div>
+      <br>
+      <label class="font-weight-bold">Select the Advertistment</label>
+      <br>
+      <input (change)="onFileSelect($event)" formControlName="ads" type="file" accept="image/gif, image/jpeg,image/png" required />
+    </div>
+    <br>
+
+    <div>
+
+      <label class="font-weight-bold">Upload the Advertistment</label>
+      <br>
+      <button type="submit" class="btn btn-success" [disabled]="form.pristine || form.invalid" >Upload  <i class="fa fa-upload"></i></button>
+    </div>
+  </form>
+<br>
+  <app-upload-files></app-upload-files>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
